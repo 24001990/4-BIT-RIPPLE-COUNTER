@@ -36,68 +36,19 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 /* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
 
- Developed by : Ganga devi RegisterNumber:24002379
- ```
- module RippleCounter(
-input wire clk, // Clock input
-output reg [3:0] count // 4-bit counter output
-);
-// Counter logic
-always @(posedge clk) begin
-if (count == 4'b1111) // Reset when count reaches 15
-count <= 4'b0000;
-else
-count <= count + 1; // Increment count
-end
-endmodule
-// Testbench
-module RippleCounter_tb;
-// Inputs
-reg clk;
-// Outputs
-wire [3:0] count;
-// Instantiate the counter
-RippleCounter uut(
-.clk(clk),
-.count(count)
-);
-// Instantiate the counter
-RippleCounter uut(
-.clk(clk),
-.count(count)
-);
-// Clock generation
-initial begin
-clk = 0;
-forever #5 clk = ~clk; // Toggle clock every 5 time units
-end
-// Stimulus
-initial begin
-// Wait for a few clock cycles
-#10;
+![Screenshot 2024-12-27 215009](https://github.com/user-attachments/assets/8a613a37-0062-4ef3-8c4b-b8f1790ca920)
 
-// Display header
-$display("Time | Count");
-$display("-----------------");
-// Functional table testing
-// Increment count 16 times and display the count
-repeat (16) begin
-#5; // Wait for one clock cycle
-$display("%4d | %b", $time, count);
-end
-// End simulation
-$finish;
-end
-endmodule
-```
+ 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
-![image](https://github.com/user-attachments/assets/4a65cdef-2f31-4773-91a3-54d3efe3b3e7)
+![Screenshot 2024-12-27 215023](https://github.com/user-attachments/assets/a046fa08-b101-4ea8-b907-d1a83d4a3a6d)
+
 
 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
 
-![image](https://github.com/user-attachments/assets/30876230-4931-4d7c-816e-12b45e9ff160)
+![Screenshot 2024-12-27 215038](https://github.com/user-attachments/assets/0d24573a-af9c-49b9-b4a9-b4e931a55837)
+
 
 
 **RESULTS**
